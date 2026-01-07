@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 
 # To provide my own custom message during exception.
 # 'error_detail' will be present inside sys library.
