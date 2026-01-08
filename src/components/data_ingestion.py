@@ -9,6 +9,7 @@ from dataclasses import dataclass       # Used for defining class variables
 
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
+from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
 
 # Some inputs will be required during data ingestion such as file path for saving train, test or raw data. etc. So, these inputs will be created in this class. Better to use "@dataclass" when only the class variables has to be initialized. If the class also has functions, then better to use init method.
 # Usually to define class variables, we will use init. But with the help of "@dataclass", we will be able to directly define class variables.
@@ -55,4 +56,7 @@ if __name__=="__main__":
     train_data, test_data = obj.initiate_data_ingestion()
 
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data, test_data)
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
+
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr, test_arr))
