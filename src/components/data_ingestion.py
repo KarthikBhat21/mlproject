@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass       # Used for defining class variables
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
 # Some inputs will be required during data ingestion such as file path for saving train, test or raw data. etc. So, these inputs will be created in this class. Better to use "@dataclass" when only the class variables has to be initialized. If the class also has functions, then better to use init method.
 # Usually to define class variables, we will use init. But with the help of "@dataclass", we will be able to directly define class variables.
 @dataclass
@@ -49,5 +52,7 @@ class DataIngestion:
 
 if __name__=="__main__":
     obj = DataIngestion()
+    train_data, test_data = obj.initiate_data_ingestion()
 
-    obj.initiate_data_ingestion()
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data, test_data)
