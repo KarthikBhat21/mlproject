@@ -14,8 +14,8 @@ from src.components.data_transformation import DataTransformationConfig
 # Usually to define class variables, we will use init. But with the help of "@dataclass", we will be able to directly define class variables.
 @dataclass
 class DataIngestionConfig:
-    train_data_path: str = os.path.join('artificats', 'train.csv')    # training data will be saved in this path
-    test_data_path: str = os.path.join('artificats', 'test.csv')    # training data will be saved in this path
+    train_data_path: str = os.path.join('artifacts', 'train.csv')    # training data will be saved in this path
+    test_data_path: str = os.path.join('artifacts', 'test.csv')    # training data will be saved in this path
     raw_data_path_data_path: str = os.path.join('artificats', 'data.csv')    # training data will be saved in this path
 
 
