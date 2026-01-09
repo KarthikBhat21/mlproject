@@ -17,7 +17,7 @@ from catboost import CatBoostRegressor
 from xgboost import XGBRegressor
 import warnings
 
-from src.utlis import save_obj, evaluate_models
+from src.utils import save_obj, evaluate_models
 from src.exception import CustomException
 from src.logger import logging
 #from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
